@@ -8,6 +8,8 @@ If the metrics indicate that the canary is dead, we immediately evacuate the min
 
 In our workshop today, we're going to deploy a canary version of our `db` service.
 
+<img src="images/5.png" width="600">
+
 ## L7 Configs
 
 We're going to deploy a single new instance of our `db` service.
@@ -184,18 +186,18 @@ Edit `db-canary-deployment` and:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: db-canary # CHANGE
+  name: db-canary # THIS CHANGED
   labels:
-    app: db-canary # CHANGE
+    app: db-canary # THIS CHANGED
 spec:
-  replicas: 1 # CHANGE
+  replicas: 1 # THIS CHANGED
   selector:
     matchLabels:
-      app: db-canary # CHANGE
+      app: db-canary # THIS CHANGED
   template:
     metadata:
       labels:
-        app: db-canary # CHANGE
+        app: db-canary # THIS CHANGED
       annotations:
         "consul.hashicorp.com/connect-inject": "true"
         "consul.hashicorp.com/connect-service": "db" # DON'T CHANGE
@@ -208,7 +210,7 @@ spec:
             - containerPort: 9090
           env:
           - name: MESSAGE
-            value: "db canary" # CHANGE
+            value: "db canary" # THIS CHANGED
           - name: LISTEN_ADDR
             value: "127.0.0.1:9090"
 ```

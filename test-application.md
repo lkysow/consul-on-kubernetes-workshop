@@ -2,6 +2,8 @@
 Most users will already have workloads running in Kubernetes before they look
 to adopt a service mesh. We're going to mimic that by installing two applications: web and db.
 
+<img src="images/1.png" width="600">
+
 Create a `db-deployment.yaml` file:
 
 ```shell
@@ -109,6 +111,8 @@ service/db created
 
 We can tell it worked by running the `curl` again:
 
+<img src="images/2.png" width="600">
+
 ```sh
 kubectl exec debug -- curl -s http://db
 {
@@ -183,10 +187,12 @@ deployment.apps/web created
 service/web created
 ```
 
-Let's test it again via the `debug` pod:
+Let's call the web service which should then call the db service:
+
+<img src="images/3.png" width="600">
 
 ```shell
-kubectl exec debug -- curl -s http://db
+kubectl exec debug -- curl -s http://web
 {
   "name": "Service",
   "uri": "/",
