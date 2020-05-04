@@ -8,7 +8,7 @@ If the metrics indicate that the canary is dead, we immediately evacuate the min
 
 In our workshop today, we're going to deploy a canary version of our `db` service.
 
-<img src="images/5.png" width="600">
+<img src="images/5.png" width="800">
 
 ## L7 Configs
 
