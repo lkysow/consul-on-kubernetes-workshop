@@ -8,7 +8,7 @@
 1. Go into the settings of Docker for Desktop and ensure that the built-in Kubernetes
   cluster is running.
   
-  ![Docker for Desktop](images/docker-for-desktop.png)
+  <img src="images/docker-for-desktop.png" width="600">
   
 1. Ensure you're in the right `kubectl` context:
     ```sh
