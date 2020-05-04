@@ -32,11 +32,7 @@ Hmmm, should we use `hashicorp/consul`? But what's `stable/consul`? Ahh, `hashic
 In order to install a Helm chart, we need to configure it first. We know we
 want to enable Consul Connect.
 
-**Your Task:** Figure out what your Helm config file should look like (hint: look at our docs).
-
-## Install Consul
-Do you have your config file ready? **Before** you install, check that it
-matches what it should look like:
+**📝 Exercise: Figure out what your Helm config file should look like (hint: look at our docs).**
 
 <details>
 <summary>Hint</summary>
@@ -50,6 +46,27 @@ connectInject:
 ---
 
 </details>
+
+👇
+
+👇
+
+👇
+
+👇
+
+👇
+
+👇
+
+👇
+
+👇
+
+## Install Consul
+Do you have your config file ready? **Before** you install, check that it
+matches what it should look like:
+
 
 We also need to add in some config so we only deploy one Consul server since
 these Docker environments only have one node and by default each server needs to be on its own node:

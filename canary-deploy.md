@@ -13,7 +13,7 @@ In our workshop today, we're going to deploy a canary version of our `db` servic
 We're going to deploy a single new instance of our `db` service.
 
 
-**📝Exercise: which L7 configs
+**📝 Exercise: Which L7 configs
 do we need to ensure no traffic is routed to it (at first) until we purposely send
 traffic there?**
 
@@ -26,6 +26,21 @@ traffic there?**
 
 </details>
 
+👇
+
+👇
+
+👇
+
+👇
+
+👇
+
+👇
+
+👇
+
+👇
 
 ```shell
 cat <<EOF > db-service-defaults.hcl
@@ -68,7 +83,7 @@ splits = [
 EOF
 ```
 
-**Now we need to apply these configs, how do we do that?**
+**📝 Exercise: Now we need to apply these configs, how do we do that?**
 
 <details>
 <summary>Hint</summary>
@@ -78,6 +93,21 @@ EOF
 
 </details>
 
+👇
+
+👇
+
+👇
+
+👇
+
+👇
+
+👇
+
+👇
+
+👇
 
 ## Apply Initial Configs
 
@@ -210,7 +240,7 @@ for i in 1 2 3 4 5; do kubectl exec debug -- curl -sS web | grep 'body": "db'; d
 ## Actually canary
 Now we're ready to route 20% of traffic to our canary.
 
-**How do we do that?**
+**📝 Exercise: How do we do that?**
 
 <details>
 <summary>Hint</summary>
@@ -218,6 +248,22 @@ Now we're ready to route 20% of traffic to our canary.
 Modify the service-splitter and change the weights.
 
 </details>
+
+👇
+
+👇
+
+👇
+
+👇
+
+👇
+
+👇
+
+👇
+
+👇
 
 Edit `db-service-splitter.hcl` to:
 

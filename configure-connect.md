@@ -1,5 +1,8 @@
 ## Configure Connect For Our Test App
-We want to use Consul Connect for our test application. What's our next step?
+We want to use Consul Connect for our test application.
+
+
+**📝 Exercise: What's our next step?**
 
 <details>
 <summary>Hint</summary>
@@ -14,6 +17,23 @@ need to add an annotation to our apps that tells Consul to inject the sidecar:
 ---
 
 </details>
+
+👇
+
+👇
+
+👇
+
+👇
+
+👇
+
+👇
+
+👇
+
+👇
+
 
 ## Redeploy DB
 
@@ -108,8 +128,10 @@ kubectl exec debug -- curl -sS web
 }
 ```
 
-But isn't the point that Connect secures our pod? How is the `web` service
-still calling the `db` service?
+But isn't the point that Connect secures our pod?
+
+**📝 Exercise: How is the `web` service
+still calling the `db` service?**
 
 <details>
 <summary>Hint</summary>
@@ -122,6 +144,22 @@ envoy proxy.
 ---
 
 </details>
+
+👇
+
+👇
+
+👇
+
+👇
+
+👇
+
+👇
+
+👇
+
+👇
 
 ## Secure DB
 Luckily Nic's fake-service makes it easy to change the listen address via the `LISTEN_ADDR` env var.
@@ -197,7 +235,7 @@ Now we must get `web` talking through it's envoy proxy. We need to
 1. Set an upstream
 1. Configure it to use that upstream url
 
-**How do we do that?**
+**📝 Exercise: How do we do that?**
 
 <details>
 <summary>Hint</summary>
@@ -214,6 +252,22 @@ And update the `UPSTREAM_URIS` env var to `http://localhost:8080`.
 ---
 
 </details>
+
+👇
+
+👇
+
+👇
+
+👇
+
+👇
+
+👇
+
+👇
+
+👇
 
 Edit `web.yaml` and add the annotations:
 
@@ -262,7 +316,7 @@ kubectl exec debug -- curl -sS web
 HANGS
 ```
 
-**Uh oh, it's just hanging. What's going wrong? (this is a hard one)**
+**📝 Exercise: Uh oh, it's just hanging. What's going wrong? (this is a hard one)**
 
 <details>
 <summary>Hint</summary>
@@ -274,6 +328,22 @@ container. We need to update our services with an annotation to name them correc
 ---
 
 </details>
+
+👇
+
+👇
+
+👇
+
+👇
+
+👇
+
+👇
+
+👇
+
+👇
 
 ## Last time
 
@@ -398,7 +468,7 @@ kubectl exec debug -- curl -sS web
 
 It should work!
 
-... wait I thought connect was supposed to be secure, how is this allowed?
+**📝 Exercise:... wait I thought connect was supposed to be secure, how is this allowed?**
 
 <details>
 <summary>Hint</summary>
