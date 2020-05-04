@@ -434,7 +434,7 @@ deployment "web" successfully rolled out
 
 Now run the curl:
 
-<img src="images/4.png" width="600">
+<img src="images/4.png" width="800">
 
 ```bash
 kubectl exec debug -- curl -sS web
