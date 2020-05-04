@@ -32,12 +32,6 @@
 
 ## Workshop Overview
 1. [Deploy a test application](test-application.md)
-1. Install Consul on Kubernetes using the Consul Helm Chart
-1. Configure connect injection for that test application
-1. Do a canary deployment for that test application
-1. Bonus exercises:
-    1. Configure metrics for the application
-
-**NOTE:** This workshop will require problem solving! Everything won't work
-perfectly, you'll need to figure things out for yourself. If you need help,
-check the collapsible "Hint" sections.
+1. [Install Consul on Kubernetes using the Consul Helm Chart](install-consul.md)
+1. [Configure connect injection for that test application](configure-connect.md)
+1. [Do a canary deployment for that test application](canary-deploy.md)

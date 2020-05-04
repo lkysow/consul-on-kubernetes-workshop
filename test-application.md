@@ -182,17 +182,10 @@ deployment.apps/web created
 service/web created
 ```
 
-Now let's port-forward to the web service so we can go to it in our browsers. In
-real life users might set the type of the service to `LoadBalancer` so it's accessible
-on the public internet.
+Let's test it again via the `debug` pod:
 
-```shell script
-kubectl port-forward service/web 8080:80
-```
-
-This command forwards http://localhost:8080 to port `80` on the `web` service.
-If you go to that URL in your browser you should see:
-```json
+```shell
+kubectl exec debug -- curl -s http://db
 {
   "name": "Service",
   "uri": "/",
@@ -225,3 +218,6 @@ If you go to that URL in your browser you should see:
 
 You can see in the `upstream_calls` section of the response that the `web` service
 made a call to `http://db`. Our app is working as expected!
+
+## Next Steps
+Now you're ready to move onto the next step: [Install Consul](install-consul.md).
