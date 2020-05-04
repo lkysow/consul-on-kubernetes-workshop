@@ -411,4 +411,4 @@ intention then the request will fail.
 </details>
 
 ## Next Steps
-Nice work! You're ready to move on to the final 
+Nice work! You're ready to move on to the final step: [Canary Deployment](canary-deploy.md)

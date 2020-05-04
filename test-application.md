@@ -3,6 +3,7 @@ Most users will already have workloads running in Kubernetes before they look
 to adopt a service mesh. We're going to mimic that by installing two applications: web and db.
 
 Create a `db-deployment.yaml` file:
+
 ```shell
 cat <<EOF > db-deployment.yaml
 apiVersion: apps/v1
