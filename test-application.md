@@ -189,7 +189,7 @@ service/web created
 
 Let's call the web service which should then call the db service:
 
-<img src="images/3.png" width="600">
+<img src="images/3.png" width="800">
 
 ```shell
 kubectl exec debug -- curl -s http://web
