@@ -18,7 +18,7 @@ do we need to ensure no traffic is routed to it (at first) until we purposely se
 traffic there?**
 
 <details>
-<summary>Hint</summary>
+<summary>Answer</summary>
 
 1. `service-defaults` that sets the protocol to `http`
 1. `service-resolver` that defines the subsets
@@ -86,7 +86,7 @@ EOF
 **📝 Exercise: Now we need to apply these configs, how do we do that?**
 
 <details>
-<summary>Hint</summary>
+<summary>Answer</summary>
 
 * `port-forward` to a Consul server/client and use `consul config write` from our laptops
 * OR `kubectl cp` the configs to a pod in the cluster and use `consul config write` from there
@@ -243,7 +243,7 @@ Now we're ready to route 20% of traffic to our canary.
 **📝 Exercise: How do we do that?**
 
 <details>
-<summary>Hint</summary>
+<summary>Answer</summary>
 
 Modify the service-splitter and change the weights.
 

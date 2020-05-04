@@ -5,7 +5,7 @@ We want to use Consul Connect for our test application.
 **📝 Exercise: What's our next step?**
 
 <details>
-<summary>Hint</summary>
+<summary>Answer</summary>
 
 As it says in the docs: https://www.consul.io/docs/platform/k8s/connect.html we
 need to add an annotation to our apps that tells Consul to inject the sidecar:
@@ -134,7 +134,7 @@ But isn't the point that Connect secures our pod?
 still calling the `db` service?**
 
 <details>
-<summary>Hint</summary>
+<summary>Answer</summary>
 
 `db` is still listening on all interfaces so `web` can still reach it via
 its Kube DNS entry that resolves to its port `9090`. We need to have it
@@ -238,7 +238,7 @@ Now we must get `web` talking through it's envoy proxy. We need to
 **📝 Exercise: How do we do that?**
 
 <details>
-<summary>Hint</summary>
+<summary>Answer</summary>
 
 Add the annotations:
 
@@ -319,7 +319,7 @@ HANGS
 **📝 Exercise: Uh oh, it's just hanging. What's going wrong? (this is a hard one)**
 
 <details>
-<summary>Hint</summary>
+<summary>Answer</summary>
 
 If you look at the UI, you'd see that the service names are all weird.
 This is because the name we use for our service is the name of the first
@@ -471,7 +471,7 @@ It should work!
 **📝 Exercise:... wait I thought connect was supposed to be secure, how is this allowed?**
 
 <details>
-<summary>Hint</summary>
+<summary>Answer</summary>
 
 ACLs are turned off so the default policy is allow. If we create a `* => * deny`
 intention then the request will fail.

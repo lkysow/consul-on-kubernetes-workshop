@@ -35,7 +35,7 @@ want to enable Consul Connect.
 **📝 Exercise: Figure out what your Helm config file should look like (hint: look at our docs).**
 
 <details>
-<summary>Hint</summary>
+<summary>Answer</summary>
 
 ```yaml
 # config.yaml
@@ -64,15 +64,15 @@ connectInject:
 👇
 
 ## Install Consul
-Do you have your config file ready? **Before** you install, check that it
-matches what it should look like:
-
+Do you have your config file ready?
 
 We also need to add in some config so we only deploy one Consul server since
 these Docker environments only have one node and by default each server needs to be on its own node:
 
 ```yaml
 # config.yaml
+connectInject:
+  enabled: true
 server:
   replicas: 1
   bootstrapExpect: 1
