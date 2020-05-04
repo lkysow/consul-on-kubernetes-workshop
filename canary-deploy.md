@@ -10,9 +10,12 @@ In our workshop today, we're going to deploy a canary version of our `db` servic
 
 ## L7 Configs
 
-We're going to deploy a single new instance of our `db` service, which L7 configs
+We're going to deploy a single new instance of our `db` service.
+
+
+**📝Exercise: which L7 configs
 do we need to ensure no traffic is routed to it (at first) until we purposely send
-traffic there?
+traffic there?**
 
 <details>
 <summary>Hint</summary>
