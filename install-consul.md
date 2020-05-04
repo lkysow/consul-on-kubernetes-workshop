@@ -11,13 +11,13 @@ To solve these problems, we're going to try out Consul!
 
 The first step is to add HashiCorp's Helm repository:
 
-```shell script
+```bash
 helm repo add hashicorp https://helm.releases.hashicorp.com/
 ```
 
 Let's see if we've got the Consul chart available to us now:
 
-```shell script
+```bash
 helm search repo consul
 NAME                             	CHART VERSION	APP VERSION	DESCRIPTION
 hashicorp/consul                 	0.20.1       	1.7.2      	Official HashiCorp Consul Chart
@@ -80,7 +80,7 @@ server:
 
 To install, run:
 
-```shell script
+```bash
 helm install consul hashicorp/consul -f config.yaml
 ```
 
@@ -88,7 +88,7 @@ helm install consul hashicorp/consul -f config.yaml
 
 Check out the pods installed by Helm by running
 
-```shell script
+```bash
 kubectl get pod -l app=consul
 NAME                                                              READY   STATUS    RESTARTS   AGE
 consul-consul-connect-injector-webhook-deployment-7f5db5ffz77tv   1/1     Running   0          104s
@@ -100,7 +100,7 @@ consul-consul-server-0                                            1/1     Runnin
 Let's access the UI to see if everything's working. We can forward a local port
 to a running Kubernetes pod:
 
-```shell script
+```bash
 kubectl port-forward consul-consul-server-0 8500:8500
 ```
 

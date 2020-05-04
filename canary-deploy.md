@@ -113,13 +113,13 @@ EOF
 
 In one Terminal, port-forward to the Consul server:
 
-```shell script
+```bash
 kubectl port-forward consul-consul-server-0 8500
 ```
 
 In another terminal, write the configs:
 
-```shell script
+```bash
 consul config write db-service-defaults.hcl
 consul config write db-service-resolver.hcl
 consul config write db-service-splitter.hcl
@@ -132,7 +132,7 @@ If you go to the UI and click on the `db` service you should see the splitter
 
 If you run the curl, things should be working as before:
 
-```shell script
+```bash
 kubectl exec debug -- curl -sS web
 
 {
@@ -170,7 +170,7 @@ We're ready to deploy our canary. If we edited our `db-deployment.yaml` and ran
 `kubectl apply`, Kubernetes would clobber the existing deployment so we need to
 duplicate that file and give the deployment a new name:
 
-```shell script
+```bash
 cp db-deployment.yaml db-canary-deployment.yaml
 ```
 
@@ -215,12 +215,12 @@ spec:
 
 Let's deploy the canary:
 
-```shell script
+```bash
 kubectl apply -f db-canary-deployment.yaml
 deployment.apps/db-canary created
 ```
 
-```shell script
+```bash
 kubectl rollout status deployment/db-canary --watch
 deployment "db-canary" successfully rolled out
 ```
@@ -228,7 +228,7 @@ deployment "db-canary" successfully rolled out
 Our web service shouldn't be routing to it. Let's check by running the `curl`
 multiple times:
 
-```shell script
+```bash
 for i in 1 2 3 4 5; do kubectl exec debug -- curl -sS web | grep 'body": "db'; done
       "body": "db",
       "body": "db",
@@ -284,13 +284,13 @@ splits = [
 
 Write it:
 
-```shell script
+```bash
 consul config write db-service-splitter.hcl
 ```
 
 Now let's test that it's working:
 
-```shell script
+```bash
 for i in 1 2 3 4 5; do kubectl exec debug -- curl -sS web | grep 'body": "db'; done
       "body": "db canary",
       "body": "db",

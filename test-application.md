@@ -177,7 +177,7 @@ a call to `web` on `/` it will make a subsequent call to `db`.
 
 Create the deployment and service:
 
-```shell script
+```bash
 kubectl apply -f web.yaml 
 deployment.apps/web created
 service/web created

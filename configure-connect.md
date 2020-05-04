@@ -75,14 +75,14 @@ annotations on the deployment.
 
 Redeploy the app:
 
-```shell script
+```bash
 kubectl apply -f db-deployment.yaml
 deployment.apps/db configured
 ```
 
 Now run:
 
-```shell script
+```bash
 kubectl get pod -l app=db
 NAME                  READY   STATUS    RESTARTS   AGE
 db-5f7ff65f54-jqn86   3/3     Running   0          4m3s
@@ -96,7 +96,7 @@ we use to re-register the service if the local Consul client gets restarted
 ## Redeploy web
 If you `curl` service web from our debug pod, there's no difference
 
-```shell script
+```bash
 kubectl exec debug -- curl -sS web
 {
   "name": "Service",
@@ -199,13 +199,13 @@ spec:
 
 And redeploy:
 
-```shell script
+```bash
 kubectl apply -f db-deployment.yaml
 ```
 
 Once the pod comes up, we should be getting an error:
 
-```shell script
+```bash
 kubectl exec debug -- curl -sS web
 {
   "name": "Service",
@@ -303,7 +303,7 @@ spec:
 
 Redeploy web:
 
-```shell script
+```bash
 kubectl apply  -f web.yaml
 deployment.apps/web configured
 service/web unchanged
@@ -311,7 +311,7 @@ service/web unchanged
 
 Now let's try the `curl`:
 
-```shell script
+```bash
 kubectl exec debug -- curl -sS web
 HANGS
 ```
@@ -416,7 +416,7 @@ spec:
 
 Redeploy the apps:
 
-```shell script
+```bash
 kubectl apply -f db-deployment.yaml -f web.yaml
 deployment.apps/db configured
 deployment.apps/web configured
@@ -425,7 +425,7 @@ service/web unchanged
 
 Use the `rollout` command to wait until the deploy is complete:
 
-```shell script
+```bash
 kubectl rollout status deploy/db --watch
 deployment "db" successfully rolled out
 kubectl rollout status deploy/web --watch
@@ -434,7 +434,7 @@ deployment "web" successfully rolled out
 
 Now run the curl:
 
-```shell script
+```bash
 kubectl exec debug -- curl -sS web
 {
   "name": "Service",
